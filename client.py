@@ -8,9 +8,7 @@ def main():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((HOST, PORT))
 
-    message = input("Insert your message here: ")
-
-    while True:
+    while message := input("Insert your message here: "):
         client.send(message.encode("ascii"))
 
         data = client.recv(1024)

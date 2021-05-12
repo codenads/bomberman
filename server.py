@@ -1,21 +1,16 @@
 import socket
-
-from _thread import *
-import threading
+from threading import Thread
 
 HOST = "127.0.0.1"
 PORT = 5000
 
-lock = threading.Lock()
-
 
 def threaded(connection, address):
-    print("Connected by: ", address)
+    print(f"Connected by: {address}")
     while data := connection.recv(1024):
         connection.send(data)
-    print("Ending connection.")
+    print(f"{address} is ending the connection.")
     connection.close()
-    lock.release()
 
 
 def server_init():
@@ -31,8 +26,7 @@ def main():
 
     while True:
         connection, address = server.accept()
-        lock.acquire()
-        start_new_thread(threaded, (connection, address))
+        Thread(target=threaded, args=(connection, address)).start()
 
     server.close()
 
