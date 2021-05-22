@@ -1,3 +1,4 @@
+from map import Map, MapObjects
 from bomb import Bomb
 from time import sleep
 
@@ -48,3 +49,7 @@ class Player:
             map.print()
         else:
             print("Invalid command.")
+
+    def death(self, map):
+        if map.get(self.x, self.y) == MapObjects.EXPLOSION.value:
+            self.life = False

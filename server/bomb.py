@@ -38,10 +38,6 @@ class Bomb:
     def explode(self, map):
         for position in self.explosion:
             map.set(position[0], position[1], MapObjects.EXPLOSION.value)
-        map.print()
-        print("==================")
         for position in self.explosion:
             map.set(position[0], position[1], MapObjects.EMPTY.value)
-        map.print()
-        print("==================")
         self.delete(map)
