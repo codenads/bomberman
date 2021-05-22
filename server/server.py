@@ -1,8 +1,8 @@
 import socket
 import uuid
 from threading import Thread
-from player import Player
-from map import Map
+from server.player import Player
+from server.map import Map
 
 HOST = "127.0.0.1"
 PORT = 5000

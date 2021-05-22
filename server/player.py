@@ -1,6 +1,5 @@
-from map import Map, MapObjects
-from bomb import Bomb
-from time import sleep
+from server.map import MapObjects
+from server.bomb import Bomb
 
 
 class Player:

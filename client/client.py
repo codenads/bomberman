@@ -1,5 +1,5 @@
 import socket
-from game import ClientGame
+from client.game import ClientGame
 
 
 HOST = "127.0.0.1"

@@ -1,4 +1,4 @@
-from map import MapObjects
+from server.map import MapObjects
 
 
 class Bomb:
