@@ -12,6 +12,10 @@ git clone https://github.com/codenads/bomberman.git
 ```
 cd bomberman
 ```
+3. Install PyGames:
+```
+python -m pip install -U pygame --user
+```
 
 3. Execute the server
 ```
