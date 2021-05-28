@@ -40,6 +40,10 @@ left | move to left
 right | move to right
 bomb | throw a bomb
 
+One of the features that could be implemented would be the integration with pygames.
+
+The difficulties faced were sending all data to all server connections.
+
 We use the socket functions in our application:
 * socket() -> receive a host and a door
 * close() -> Mark the socket closed
