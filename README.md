@@ -1,5 +1,8 @@
 # Bomberman
 ## A bomberman socket application
+### Bomberman implementation using a threaded client - server socket, supporting up to a maximum of 4 connections.
+
+Created by: Kelly Bianca Araujo Silva (@kellybianca) and Luis Antônio da Silva Nascimento (@codenads)
 
 To execute this project you have to follow this eteps:
 
@@ -12,16 +15,37 @@ git clone https://github.com/codenads/bomberman.git
 ```
 cd bomberman
 ```
-3. Install PyGames:
+2. Execute the server
 ```
-python -m pip install -U pygame --user
+python3 server.py 
 ```
-
-3. Execute the server
+or 
 ```
-python3 server.py
+python server.py 
 ```
-4. Execute the client
+3. Execute the client
 ```
 python3 client.py
 ```
+or
+```
+python client.py
+```
+To start this game, you have to input this commands:
+moviment | description
+---------|-----------
+up | move to up
+down | move to down
+left | move to left
+right | move to right
+bomb | throw a bomb
+
+We use the socket functions in our application:
+* socket() -> receive a host and a door
+* close() -> Mark the socket closed
+* listen() -> Enable a server to accept connections
+* accept() -> Accept a connection
+* bind() -> Bind the socket to address
+* recv() -> Receive data from the socket
+* connect() -> Connect to a remote socket at address
+
