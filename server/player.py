@@ -1,4 +1,3 @@
-from server.map import MapObjects
 from server.bomb import Bomb
 
 
@@ -49,6 +48,5 @@ class Player:
         else:
             print("Invalid command.")
 
-    def death(self, map):
-        if map.get(self.x, self.y) == MapObjects.EXPLOSION.value:
-            self.life = False
+    def death(self):
+        self.life = False

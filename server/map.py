@@ -20,12 +20,15 @@ class Map:
         ]
         self.width = 5
         self.height = 5
+        self.players = []
 
     def get(self, x, y):
-        return self.path[y][x]  # on player's logic, x is horizontal and y is vertical
+        if x < self.width and y < self.height:
+            return self.path[y][x]  # on player's logic, x and y are inverted
 
     def set(self, x, y, value):
-        self.path[y][x] = value  # on player's logic, x is horizontal and y is vertical
+        if x < self.width and y < self.height:
+            self.path[y][x] = value  # on player's logic, x and y are inverted
 
     def collision(self, x, y):
         return bool(self.get(x, y))

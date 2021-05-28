@@ -6,7 +6,7 @@ class Bomb:
         self.x = x
         self.y = y
         self.force = 2
-        self.explosion = []
+        self.explosion = [(x, y)]
         self.create(map)
         self.range(map)
 
@@ -38,6 +38,9 @@ class Bomb:
     def explode(self, map):
         for position in self.explosion:
             map.set(position[0], position[1], MapObjects.EXPLOSION.value)
+        for player in map.players:
+            if (player.x, player.y) in self.explosion:
+                player.death()
         for position in self.explosion:
             map.set(position[0], position[1], MapObjects.EMPTY.value)
         self.delete(map)
