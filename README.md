@@ -49,3 +49,4 @@ We use the socket functions in our application:
 * recv() -> Receive data from the socket
 * connect() -> Connect to a remote socket at address
 
+Here is the [documentation](https://docs.python.org/3/library/socket.html) about python3 with socket
